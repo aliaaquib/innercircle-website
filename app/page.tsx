@@ -1,6 +1,7 @@
 import { Check, Search, SendHorizonal, Sparkles } from "lucide-react";
 import { CTASection } from "@/components/cta-section";
 import { HeroSection } from "@/components/hero-section";
+import { HomeFAQSection } from "@/components/home-faq-section";
 import { HomeFeaturesSection } from "@/components/home-features-section";
 import { HomeSocialProofSection } from "@/components/home-social-proof-section";
 import { FadeIn, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
@@ -200,6 +201,8 @@ export default function HomePage() {
           </div>
         </FadeIn>
       </SectionShell>
+
+      <HomeFAQSection />
 
       <CTASection title="Start using InnerCircle" />
     </>

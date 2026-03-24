@@ -32,11 +32,6 @@ export function CTASection({
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/login">
-                <Button variant="ghost" className="w-full border border-white/12 text-white hover:text-white sm:w-auto">
-                  Login
-                </Button>
-              </Link>
             </div>
           </div>
         </Card>
