@@ -36,7 +36,7 @@ export function HomeSocialProofSection({ testimonials }: HomeSocialProofSectionP
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#fff8ef] to-transparent sm:w-16" />
 
         <TestimonialRow testimonials={rowOne} direction="left" />
-        <TestimonialRow testimonials={rowTwo} direction="right" className="hidden sm:block" />
+        <TestimonialRow testimonials={rowTwo} direction="right" />
         <TestimonialRow testimonials={rowThree} direction="left" className="hidden lg:block" />
       </div>
     </SectionShell>

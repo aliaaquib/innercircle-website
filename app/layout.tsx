@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "@/app/globals.css";
 import { BackToTop } from "@/components/back-to-top";
 import { Footer } from "@/components/footer";
+import { InnerCircleChat } from "@/components/innercircle-chat";
 import { Navbar } from "@/components/navbar";
 import { siteConfig } from "@/lib/site";
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <InnerCircleChat />
           <BackToTop />
         </div>
       </body>

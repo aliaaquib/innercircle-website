@@ -1,11 +1,10 @@
 "use client";
 
-import type { Route } from "next";
 import { useState } from "react";
+import { openInnerCircleChat } from "@/components/innercircle-chat";
 import { FadeIn, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
 import { FAQItem } from "@/components/faq-item";
 import { SectionShell } from "@/components/section-shell";
-import { ButtonLink } from "@/components/ui/button";
 
 const faqItems = [
   {
@@ -72,13 +71,13 @@ export function HomeFAQSection() {
               <div className="mt-4 border-t border-slate-100 px-3 pt-5 sm:px-4 sm:pt-6">
                 <p className="text-sm text-slate-500">Still have questions?</p>
                 <div className="mt-3">
-                  <ButtonLink
-                    href={"/signup" as Route}
-                    variant="secondary"
-                    className="px-4 py-2.5 text-sm shadow-sm"
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center rounded-full border border-slate-200/90 bg-white/95 px-4 py-2.5 text-sm font-semibold text-ink shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-slate-300 hover:shadow-md"
+                    onClick={() => openInnerCircleChat()}
                   >
                     Ask InnerCircle AI
-                  </ButtonLink>
+                  </button>
                 </div>
               </div>
             </div>
