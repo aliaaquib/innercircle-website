@@ -17,13 +17,13 @@ type ButtonLinkProps = {
 };
 
 const buttonStyles =
-  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-sky disabled:cursor-not-allowed disabled:opacity-50";
+  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold tracking-[-0.01em] transform-gpu transition-all duration-300 ease-out hover:scale-[1.03] hover:brightness-[1.02] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50";
 
 function getVariantClasses(variant: NonNullable<ButtonProps["variant"]>) {
   return {
-    primary: "bg-ink text-white shadow-glow hover:bg-slate-800",
-    secondary: "border border-slate-200 bg-white text-ink hover:border-slate-300",
-    ghost: "bg-transparent text-slate-600 hover:text-ink"
+    primary: "bg-ink text-white shadow-lg shadow-slate-900/15 hover:bg-slate-800",
+    secondary: "border border-slate-200/90 bg-white/95 text-ink shadow-sm hover:border-slate-300 hover:shadow-md",
+    ghost: "bg-transparent text-slate-600 hover:bg-white/40 hover:text-ink"
   }[variant];
 }
 

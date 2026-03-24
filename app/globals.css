@@ -10,10 +10,17 @@ html {
   scroll-behavior: smooth;
 }
 
+body,
+html {
+  min-height: 100%;
+}
+
 body {
   @apply bg-sand text-ink antialiased;
   background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 247, 237, 0.92) 100%),
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 32%),
+    radial-gradient(circle at 78% 12%, rgba(56, 189, 248, 0.12), transparent 24%),
     radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.12), transparent 28%),
     linear-gradient(180deg, #fffdf8 0%, #fff7ed 100%);
 }
@@ -25,4 +32,65 @@ body {
 
 ::selection {
   background: rgba(56, 189, 248, 0.22);
+}
+
+@layer base {
+  body {
+    @apply leading-relaxed;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky/60 focus-visible:ring-offset-2 focus-visible:ring-offset-sand;
+  }
+}
+
+@layer utilities {
+  .section-divider {
+    @apply after:pointer-events-none after:absolute after:inset-x-6 after:-bottom-px after:h-px after:bg-gradient-to-r after:from-transparent after:via-slate-200/70 after:to-transparent;
+  }
+
+  .section-tint {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.18));
+  }
+
+  .section-tint-sky {
+    background-image: linear-gradient(180deg, rgba(56, 189, 248, 0.07), rgba(255, 255, 255, 0.12));
+  }
+
+  .section-tint-coral {
+    background-image: linear-gradient(180deg, rgba(249, 115, 22, 0.05), rgba(255, 255, 255, 0.14));
+  }
+
+  .depth-1 {
+    @apply border border-white/80;
+    box-shadow:
+      0 28px 70px rgba(15, 23, 42, 0.12),
+      0 10px 24px rgba(15, 23, 42, 0.07);
+  }
+
+  .depth-2 {
+    @apply border border-slate-200/80;
+    box-shadow:
+      0 18px 42px rgba(15, 23, 42, 0.08),
+      0 6px 18px rgba(15, 23, 42, 0.04);
+  }
+
+  .depth-3 {
+    @apply border border-slate-200/70;
+    box-shadow:
+      0 10px 24px rgba(15, 23, 42, 0.05),
+      0 2px 8px rgba(15, 23, 42, 0.03);
+  }
+
+  .card-hover {
+    @apply transform-gpu transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .glass-surface {
+    @apply bg-white/80 backdrop-blur-xl;
+  }
 }
