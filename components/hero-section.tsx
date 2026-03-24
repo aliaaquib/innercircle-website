@@ -49,6 +49,22 @@ export function HeroSection() {
             </p>
           </div>
 
+          <StaggerGroup className="flex flex-col gap-3 text-sm text-slate-600" delayChildren={0.15}>
+            {checklistItems.map((item) => (
+              <StaggerItem key={item}>
+                <button
+                  type="button"
+                  className="inline-flex w-full items-center gap-3 px-0 py-1 text-left leading-6 text-slate-600 transition-all duration-300 hover:text-ink sm:w-auto"
+                >
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-sky/10 text-sky">
+                    <Check className="h-3.5 w-3.5" />
+                  </span>
+                  <span className="text-sm text-slate-600">{item}</span>
+                </button>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+
           <div className="flex flex-col gap-3 pt-1 sm:flex-row">
             <Link href="/signup">
               <Button className="w-full px-6 py-3.5 sm:w-auto">
@@ -60,19 +76,6 @@ export function HeroSection() {
               <Button variant="secondary" className="w-full px-6 py-3.5 sm:w-auto">Know More</Button>
             </Link>
           </div>
-
-          <StaggerGroup className="flex flex-col gap-3 text-sm text-slate-600" delayChildren={0.15}>
-            {checklistItems.map((item) => (
-              <StaggerItem key={item}>
-                <div className="flex items-center gap-3 leading-6">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-sky/10 text-sky">
-                    <Check className="h-3.5 w-3.5" />
-                  </span>
-                  <span className="text-sm text-slate-600">{item}</span>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
         </FadeIn>
 
         <FadeIn className="relative" delay={0.08} y={32}>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "@/app/globals.css";
+import { BackToTop } from "@/components/back-to-top";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { siteConfig } from "@/lib/site";
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <BackToTop />
         </div>
       </body>
     </html>

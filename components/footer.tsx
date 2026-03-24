@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUp, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Linkedin, Twitter } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { SectionShell } from "@/components/section-shell";
@@ -92,7 +92,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="mt-10 grid w-full max-w-3xl gap-8 text-center text-sm text-slate-500 sm:grid-cols-3 sm:gap-12 lg:mt-12 lg:gap-16">
+          <div className="mt-10 grid w-full max-w-3xl grid-cols-3 gap-6 text-center text-sm text-slate-500 sm:gap-12 lg:mt-12 lg:gap-16">
             <div>
               <p className="mb-2 text-sm font-semibold text-ink">Product</p>
               <div className="space-y-2">
@@ -129,18 +129,11 @@ export function Footer() {
           </div>
         </motion.div>
 
-        <div className="relative mt-16 border-t border-slate-200/60 pt-6 text-center text-sm text-slate-400">
-          <button
-            type="button"
-            aria-label="Back to top"
-            className="absolute left-0 top-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:text-ink"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            <ArrowUp className="h-4 w-4" />
-          </button>
+        <div className="mt-16 border-t border-slate-200/60 pt-6 text-center text-sm text-slate-400">
           <p>© 2026 InnerCircle. All rights reserved.</p>
         </div>
       </SectionShell>
+
     </footer>
   );
 }
