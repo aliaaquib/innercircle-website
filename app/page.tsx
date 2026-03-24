@@ -39,6 +39,27 @@ const shiftPoints = [
   "Move from scattered effort to a clear workflow"
 ] as const;
 
+const teamHighlights = [
+  "Faster decisions",
+  "Less noise, more signal",
+  "Higher response rates"
+] as const;
+
+const teamProofItems = [
+  {
+    title: "High-signal recommendations",
+    description: "Identify the right people instead of messaging randomly."
+  },
+  {
+    title: "Context-aware messaging",
+    description: "Emails feel researched and relevant, not templated."
+  },
+  {
+    title: "Unified workflow",
+    description: "Jobs, outreach, and resume tools in one place."
+  }
+] as const;
+
 export default function HomePage() {
   return (
     <>
@@ -131,34 +152,52 @@ export default function HomePage() {
 
       <HomeSocialProofSection testimonials={socialProof} />
 
-      <SectionShell className="relative py-16 sm:py-20">
+      <SectionShell className="relative py-20 sm:py-24">
         <div className="section-tint-coral absolute inset-x-0 inset-y-5 -z-10 rounded-[40px] border border-white/40 opacity-70" />
         <FadeIn>
-          <Card className="depth-1 rounded-[34px] border-slate-200 bg-white/88 shadow-lg shadow-slate-900/10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">Why teams like it</p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-ink">A sharper workflow for career momentum.</h2>
-                <p className="mt-4 text-sm leading-7 text-slate-600">
-                  InnerCircle brings together the outreach, job-search, and application pieces that usually live across too many tabs and docs.
-                </p>
-              </div>
-              <div className="grid gap-3 text-sm text-slate-600">
-                {[
-                  "High-signal contact recommendations instead of manual guessing",
-                  "Personalized email drafts built around context, not templates",
-                  "Resume and discovery tools that support the same end goal"
-                ].map((item) => (
-                  <div key={item} className="depth-3 card-hover flex gap-3 rounded-[22px] bg-slate-50/90 p-4">
-                    <span className="mt-1 rounded-full bg-sky/10 p-1 text-sky">
-                      <Check className="h-4 w-4" />
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div className="max-w-xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">Why teams like it</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-ink sm:text-4xl">A sharper workflow for career momentum.</h2>
+              <p className="mt-4 max-w-lg text-sm leading-7 text-slate-600 sm:text-base">
+                InnerCircle brings together outreach, job discovery, and application tools into a single, focused flow — so you spend less time guessing and more time making progress.
+              </p>
+
+              <div className="mt-6 flex flex-col gap-3 text-sm text-slate-500">
+                {teamHighlights.map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-sky/10 text-sky">
+                      <Check className="h-3.5 w-3.5" />
                     </span>
-                    <p className="leading-6">{item}</p>
+                    <p>{item}</p>
                   </div>
                 ))}
               </div>
             </div>
-          </Card>
+
+            <div className="rounded-2xl bg-white/65 p-2">
+              <div className="rounded-2xl bg-white/82 p-3 shadow-sm shadow-slate-900/5 backdrop-blur-sm sm:p-4">
+                <div className="grid gap-2 sm:gap-3">
+                  {teamProofItems.map((item) => (
+                    <div
+                      key={item.title}
+                      className="group flex gap-4 rounded-xl px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-sm"
+                    >
+                      <span className="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-sky/10 text-sky">
+                        <Check className="h-4 w-4" />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="font-semibold tracking-[-0.01em] text-ink">{item.title}</p>
+                        <p className="mt-1 text-sm leading-6 text-slate-500">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </FadeIn>
       </SectionShell>
 
