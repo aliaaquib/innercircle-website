@@ -24,6 +24,22 @@ const steps = [
   }
 ] as const;
 
+const problemPoints = [
+  "You do not know who is actually worth reaching out to",
+  "Most cold emails feel generic and get ignored",
+  "Too many profiles, no clear signal",
+  "People spend hours guessing instead of acting",
+  "No feedback loop on what works"
+] as const;
+
+const shiftPoints = [
+  "Focus on the right people, not more people",
+  "Prioritize high-signal connections instantly",
+  "Use context-aware messaging instead of templates",
+  "Reduce time spent searching and guessing",
+  "Move from scattered effort to a clear workflow"
+] as const;
+
 export default function HomePage() {
   return (
     <>
@@ -35,20 +51,44 @@ export default function HomePage() {
           <FadeIn>
             <Card className="depth-2 card-hover rounded-[32px] border-slate-200 bg-white/92">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">The problem</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-ink">Cold emailing is hard. Finding the right people is harder.</h2>
-              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-[-0.03em] text-ink">Cold emailing is hard. Finding the right people is harder.</h2>
+              <p className="mt-4 max-w-lg text-sm leading-8 text-slate-600 sm:text-base">
                 Most outreach fails before the first sentence. People spend hours guessing who matters, then send messages that never feel personal enough to earn a reply.
               </p>
+              <StaggerGroup className="mt-7 flex max-w-lg flex-col gap-3" delayChildren={0.12} staggerChildren={0.08}>
+                {problemPoints.map((item) => (
+                  <StaggerItem key={item}>
+                    <div className="flex items-start gap-3 text-sm leading-6 text-slate-600">
+                      <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-sky/10 text-sky">
+                        <Check className="h-3.5 w-3.5" />
+                      </span>
+                      <span>{item}</span>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerGroup>
             </Card>
           </FadeIn>
 
           <FadeIn delay={0.08}>
             <Card className="depth-1 card-hover rounded-[32px] border-slate-200 bg-ink text-white shadow-xl shadow-slate-950/16">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky">The shift</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em]">InnerCircle turns scattered effort into a focused plan.</h2>
-              <p className="mt-4 text-sm leading-8 text-slate-300 sm:text-base">
+              <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-[-0.03em]">InnerCircle turns scattered effort into a focused plan.</h2>
+              <p className="mt-4 max-w-lg text-sm leading-8 text-slate-300 sm:text-base">
                 Instead of starting from a blank page, you get the right contacts, messaging help, and support tools around the rest of your search.
               </p>
+              <StaggerGroup className="mt-7 flex max-w-lg flex-col gap-3" delayChildren={0.16} staggerChildren={0.08}>
+                {shiftPoints.map((item) => (
+                  <StaggerItem key={item}>
+                    <div className="flex items-start gap-3 text-sm leading-6 text-slate-300">
+                      <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-sky">
+                        <Check className="h-3.5 w-3.5" />
+                      </span>
+                      <span>{item}</span>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerGroup>
             </Card>
           </FadeIn>
         </div>
