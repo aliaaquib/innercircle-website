@@ -1,11 +1,11 @@
 import { Check, Search, SendHorizonal, Sparkles } from "lucide-react";
 import { CTASection } from "@/components/cta-section";
-import { FeatureCard } from "@/components/feature-card";
 import { HeroSection } from "@/components/hero-section";
+import { HomeFeaturesSection } from "@/components/home-features-section";
 import { FadeIn, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
 import { SectionShell } from "@/components/section-shell";
 import { Card } from "@/components/ui/card";
-import { featureHighlights, socialProof } from "@/lib/site";
+import { socialProof } from "@/lib/site";
 
 const steps = [
   {
@@ -126,19 +126,7 @@ export default function HomePage() {
         </StaggerGroup>
       </SectionShell>
 
-      <SectionShell className="section-divider relative py-16 sm:py-20">
-        <div className="section-tint absolute inset-x-0 inset-y-5 -z-10 rounded-[40px] border border-white/45 opacity-75" />
-        <FadeIn className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">Features</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-ink sm:text-4xl">Everything you need to go from application to introduction.</h2>
-        </FadeIn>
-
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {featureHighlights.map((feature) => (
-            <FeatureCard key={feature.title} title={feature.title} description={feature.description} />
-          ))}
-        </div>
-      </SectionShell>
+      <HomeFeaturesSection />
 
       <SectionShell className="section-divider relative py-16 sm:py-20">
         <div className="section-tint-sky absolute inset-x-0 inset-y-5 -z-10 rounded-[40px] border border-white/40 opacity-70" />
