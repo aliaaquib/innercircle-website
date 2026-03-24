@@ -87,5 +87,20 @@ export const socialProof = [
     quote: "It feels like having a networking strategist and resume coach in one place.",
     name: "Sofia L.",
     role: "MBA applicant"
+  },
+  {
+    quote: "I stopped wasting time on random outreach and started messaging people who actually made sense for the role.",
+    name: "Daniel C.",
+    role: "Growth candidate"
+  },
+  {
+    quote: "The drafts were short, natural, and easy to personalize. That alone saved me hours each week.",
+    name: "Elena M.",
+    role: "Operations manager"
+  },
+  {
+    quote: "What I liked most was the workflow. Jobs, people, and messaging finally felt connected.",
+    name: "Aaron P.",
+    role: "Software engineer"
   }
 ] as const;

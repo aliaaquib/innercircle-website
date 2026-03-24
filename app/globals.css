@@ -49,6 +49,24 @@ body {
 }
 
 @layer utilities {
+  @keyframes testimonial-scroll-left {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @keyframes testimonial-scroll-right {
+    from {
+      transform: translate3d(-50%, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
   .section-divider {
     @apply after:pointer-events-none after:absolute after:inset-x-6 after:-bottom-px after:h-px after:bg-gradient-to-r after:from-transparent after:via-slate-200/70 after:to-transparent;
   }
@@ -92,5 +110,13 @@ body {
 
   .glass-surface {
     @apply bg-white/80 backdrop-blur-xl;
+  }
+
+  .animate-testimonial-left {
+    animation: testimonial-scroll-left 26s linear infinite;
+  }
+
+  .animate-testimonial-right {
+    animation: testimonial-scroll-right 28s linear infinite;
   }
 }

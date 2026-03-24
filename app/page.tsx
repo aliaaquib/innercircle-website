@@ -2,6 +2,7 @@ import { Check, Search, SendHorizonal, Sparkles } from "lucide-react";
 import { CTASection } from "@/components/cta-section";
 import { HeroSection } from "@/components/hero-section";
 import { HomeFeaturesSection } from "@/components/home-features-section";
+import { HomeSocialProofSection } from "@/components/home-social-proof-section";
 import { FadeIn, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
 import { SectionShell } from "@/components/section-shell";
 import { Card } from "@/components/ui/card";
@@ -128,36 +129,7 @@ export default function HomePage() {
 
       <HomeFeaturesSection />
 
-      <SectionShell className="section-divider relative py-16 sm:py-20">
-        <div className="section-tint-sky absolute inset-x-0 inset-y-5 -z-10 rounded-[40px] border border-white/40 opacity-70" />
-        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <FadeIn>
-            <Card className="depth-2 card-hover rounded-[32px] border-slate-200 bg-white/92">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">Social proof</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-ink">What early users say</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-600">
-                Mock testimonials for now, but placed here to establish the trust layer the full site will need.
-              </p>
-            </Card>
-          </FadeIn>
-
-          <StaggerGroup className="grid gap-4 md:grid-cols-3" delayChildren={0.12} staggerChildren={0.12}>
-            {socialProof.map((item) => (
-              <StaggerItem key={item.name}>
-                <Card className="depth-2 card-hover rounded-[30px] border-slate-200 bg-white/88">
-                  <div className="flex h-full flex-col justify-between gap-6">
-                    <p className="text-sm leading-7 text-slate-600">“{item.quote}”</p>
-                    <div>
-                      <p className="font-semibold text-ink">{item.name}</p>
-                      <p className="text-sm text-slate-500">{item.role}</p>
-                    </div>
-                  </div>
-                </Card>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
-        </div>
-      </SectionShell>
+      <HomeSocialProofSection testimonials={socialProof} />
 
       <SectionShell className="relative py-16 sm:py-20">
         <div className="section-tint-coral absolute inset-x-0 inset-y-5 -z-10 rounded-[40px] border border-white/40 opacity-70" />
