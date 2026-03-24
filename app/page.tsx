@@ -1,11 +1,9 @@
-import Link from "next/link";
-import { ArrowRight, Check, Search, SendHorizonal, Sparkles } from "lucide-react";
+import { Check, Search, SendHorizonal, Sparkles } from "lucide-react";
 import { CTASection } from "@/components/cta-section";
 import { FeatureCard } from "@/components/feature-card";
 import { HeroSection } from "@/components/hero-section";
 import { FadeIn, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
 import { SectionShell } from "@/components/section-shell";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { featureHighlights, socialProof } from "@/lib/site";
 
@@ -96,32 +94,31 @@ export default function HomePage() {
 
       <SectionShell className="section-divider relative py-16 sm:py-20">
         <div className="section-tint-sky absolute inset-x-0 inset-y-5 -z-10 rounded-[40px] border border-white/40 opacity-80" />
-        <FadeIn className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <FadeIn className="max-w-3xl">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">How it works</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-ink sm:text-4xl">A simple flow with better odds of a real response.</h2>
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
+              InnerCircle simplifies the entire process — from figuring out where to apply, to identifying the right people, to sending messages that actually get replies.
+            </p>
           </div>
-          <Link href="/signup">
-            <Button variant="secondary" className="px-6 py-3.5">
-              Start with InnerCircle
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
         </FadeIn>
 
-        <StaggerGroup className="mt-10 grid gap-4 lg:grid-cols-3" delayChildren={0.12} staggerChildren={0.12}>
+        <StaggerGroup className="mt-10 grid gap-6 lg:grid-cols-3" delayChildren={0.12} staggerChildren={0.12}>
           {steps.map((step, index) => {
             const Icon = [Search, Sparkles, SendHorizonal][index];
 
             return (
               <StaggerItem key={step.title}>
-                <Card className="depth-2 card-hover rounded-[30px] border-slate-200 bg-white/88">
-                  <span className="inline-flex rounded-2xl bg-sky/10 p-3 text-sky shadow-sm shadow-sky/15">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Step {index + 1}</p>
-                  <h3 className="mt-2 text-2xl font-semibold tracking-[-0.02em] text-ink">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{step.description}</p>
+                <Card className="h-full rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-8">
+                  <div className="flex h-full flex-col gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-sky">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <p className="pt-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Step {index + 1}</p>
+                    <h3 className="text-xl font-semibold tracking-[-0.02em] text-ink sm:text-2xl">{step.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{step.description}</p>
+                  </div>
                 </Card>
               </StaggerItem>
             );
