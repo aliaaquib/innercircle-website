@@ -32,7 +32,7 @@ const checklistItems = [
 ] as const;
 
 export function HeroSection() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <SectionShell className="section-divider relative py-16 sm:py-24">
@@ -96,7 +96,7 @@ export function HeroSection() {
                     title={item.title}
                     description={item.description}
                     isOpen={openIndex === index}
-                    onClick={() => setOpenIndex(index)}
+                    onClick={() => setOpenIndex((current) => (current === index ? null : index))}
                   />
                 </StaggerItem>
               ))}
