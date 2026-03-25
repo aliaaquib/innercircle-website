@@ -68,8 +68,8 @@ export function HomeFeaturesSection() {
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <Card className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/10 sm:p-8">
-            <StaggerGroup className="divide-y divide-slate-100" delayChildren={0.14} staggerChildren={0.08}>
+          <Card className="rounded-2xl border border-slate-200 bg-ink p-6 text-white shadow-lg shadow-slate-900/14 sm:p-8">
+            <StaggerGroup className="divide-y divide-white/10" delayChildren={0.14} staggerChildren={0.08}>
               {featureItems.map((item, index) => (
                 <StaggerItem key={item.title}>
                   <FeatureAccordionItem
@@ -78,6 +78,7 @@ export function HomeFeaturesSection() {
                     icon={item.icon}
                     isOpen={openIndex === index}
                     onClick={() => setOpenIndex(index)}
+                    dark
                   />
                 </StaggerItem>
               ))}
