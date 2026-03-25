@@ -176,20 +176,20 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white/65 p-2">
-              <div className="rounded-2xl bg-white/82 p-3 shadow-sm shadow-slate-900/5 backdrop-blur-sm sm:p-4">
+            <div className="rounded-2xl bg-ink p-2 shadow-lg shadow-slate-900/14">
+              <div className="rounded-2xl bg-white/4 p-3 backdrop-blur-sm sm:p-4">
                 <div className="grid gap-2 sm:gap-3">
                   {teamProofItems.map((item) => (
                     <div
                       key={item.title}
-                      className="group flex gap-4 rounded-xl px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-sm"
+                      className="group flex gap-4 rounded-xl px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/6"
                     >
-                      <span className="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-sky/10 text-sky">
+                      <span className="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-sky">
                         <Check className="h-4 w-4" />
                       </span>
                       <div className="min-w-0">
-                        <p className="font-semibold tracking-[-0.01em] text-ink">{item.title}</p>
-                        <p className="mt-1 text-sm leading-6 text-slate-500">
+                        <p className="font-semibold tracking-[-0.01em] text-white">{item.title}</p>
+                        <p className="mt-1 text-sm leading-6 text-slate-300">
                           {item.description}
                         </p>
                       </div>
