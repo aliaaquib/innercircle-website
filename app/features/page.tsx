@@ -17,20 +17,26 @@ export default function FeaturesPage() {
           </p>
         </FadeIn>
 
-        <StaggerGroup className="mt-12 grid gap-5" delayChildren={0.1} staggerChildren={0.12}>
+        <StaggerGroup className="mt-12 grid gap-5 lg:grid-cols-2" delayChildren={0.1} staggerChildren={0.12}>
           {detailedFeatures.map((feature, index) => (
             <StaggerItem key={feature.title}>
-              <Card className="depth-2 card-hover rounded-[32px] border-slate-200 bg-white/92">
-                <div className="grid gap-5 lg:grid-cols-[0.3fr_1fr] lg:items-start">
+              <Card className="card-hover h-full rounded-[36px] border border-slate-200 bg-ink p-8 text-white shadow-xl shadow-slate-950/18 sm:p-10">
+                <div className="grid h-full gap-6">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Feature {index + 1}</p>
-                    <h2 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-ink sm:text-3xl">{feature.title}</h2>
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky">
+                      {index + 1}
+                    </p>
+                    <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl">
+                      {feature.title}
+                    </h2>
                   </div>
-                  <div className="grid gap-4 lg:grid-cols-2">
-                    <p className="text-sm leading-7 text-slate-600 sm:text-base">{feature.body}</p>
-                    <div className="depth-3 rounded-[24px] bg-slate-50/90 p-5 text-sm leading-7 text-slate-600">
+                  <div className="grid gap-5">
+                    <p className="max-w-xl text-base leading-8 text-slate-300">
+                      {feature.body}
+                    </p>
+                    <p className="max-w-xl text-base leading-8 text-slate-300">
                       InnerCircle keeps the experience cohesive, so the same product that helps you find contacts can also support your resume and next steps inside the dashboard.
-                    </div>
+                    </p>
                   </div>
                 </div>
               </Card>
