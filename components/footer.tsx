@@ -96,6 +96,7 @@ export function Footer() {
             <div>
               <p className="mb-2 text-sm font-semibold text-ink">Product</p>
               <div className="space-y-2">
+                <Link href="/about" className="block transition-colors duration-300 hover:text-ink">About</Link>
                 <Link href="/features" className="block transition-colors duration-300 hover:text-ink">Features</Link>
                 <Link href="/pricing" className="block transition-colors duration-300 hover:text-ink">Pricing</Link>
               </div>
