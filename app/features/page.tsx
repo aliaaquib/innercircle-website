@@ -20,21 +20,33 @@ export default function FeaturesPage() {
         <StaggerGroup className="mt-12 grid gap-5 lg:grid-cols-2" delayChildren={0.1} staggerChildren={0.12}>
           {detailedFeatures.map((feature, index) => (
             <StaggerItem key={feature.title}>
-              <Card className="card-hover h-full rounded-[36px] border border-slate-200 bg-ink p-8 text-white shadow-xl shadow-slate-950/18 sm:p-10">
+              <Card
+                className={
+                  index % 2 === 0
+                    ? "card-hover h-full rounded-[36px] border border-slate-200 bg-ink p-8 text-white shadow-xl shadow-slate-950/18 sm:p-10"
+                    : "card-hover h-full rounded-[36px] border border-slate-200 bg-white/95 p-8 text-ink shadow-lg shadow-slate-900/10 sm:p-10"
+                }
+              >
                 <div className="grid h-full gap-6">
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky">
                       {index + 1}
                     </p>
-                    <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl">
+                    <h2
+                      className={
+                        index % 2 === 0
+                          ? "mt-3 text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl"
+                          : "mt-3 text-2xl font-semibold tracking-[-0.03em] text-ink sm:text-3xl"
+                      }
+                    >
                       {feature.title}
                     </h2>
                   </div>
                   <div className="grid gap-5">
-                    <p className="max-w-xl text-base leading-8 text-slate-300">
+                    <p className={index % 2 === 0 ? "max-w-xl text-base leading-8 text-slate-300" : "max-w-xl text-base leading-8 text-slate-600"}>
                       {feature.body}
                     </p>
-                    <p className="max-w-xl text-base leading-8 text-slate-300">
+                    <p className={index % 2 === 0 ? "max-w-xl text-base leading-8 text-slate-300" : "max-w-xl text-base leading-8 text-slate-600"}>
                       InnerCircle keeps the experience cohesive, so the same product that helps you find contacts can also support your resume and next steps inside the dashboard.
                     </p>
                   </div>
